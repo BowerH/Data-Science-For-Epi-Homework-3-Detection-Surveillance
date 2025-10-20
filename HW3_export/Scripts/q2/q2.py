@@ -5,8 +5,7 @@ import numpy as np
 
 ##### Data cleaning / loading
 # Load raw CSV
-df = pd.read_csv("C:\\Users\\hbower\\Downloads\\HW3_export\\hw3_dataset\\datasets\\nyc_influenza_by_county.csv")
-
+df = pd.read_csv("/Users/hannah/PycharmProjects/Data-Science-For-Epi-Homework-3-Detection-Surveillance/HW3_export/hw3_dataset/datasets/nyc_influenza_by_county.csv")
 #only INFLUENZA_A
 df_A = df[df['Disease'] == 'INFLUENZA_A'].copy()
 df_A = df_A[['Week Ending Date', 'County', 'Count']]
@@ -27,7 +26,7 @@ plt.xlabel('Week Ending Date')
 plt.ylabel('Weekly Count')
 plt.legend()
 plt.tight_layout()
-plt.savefig("Scripts\\q2\\Figures\\top5_influenzaA.png") 
+plt.savefig("/Scripts/q2/Figures/top5_influenzaA.png")
 plt.show()
 
 ############## 2.2
@@ -66,7 +65,7 @@ print(top10out)
 
 ############## 2.4  Spatial Subset Scan (with neighbor-averaged counts)
 
-adjacency_path = r"C:\Users\hbower\Downloads\HW3_export\hw3_dataset\datasets\county_adjacency2025.txt"
+adjacency_path = r"/Users/hannah/PycharmProjects/Data-Science-For-Epi-Homework-3-Detection-Surveillance/HW3_export/hw3_dataset/datasets/county_adjacency2025.txt"
 neighbors = {}
 
 with open(adjacency_path, "r", encoding="utf-8") as f:
