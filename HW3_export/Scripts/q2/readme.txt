@@ -1,14 +1,15 @@
-How to run:
+# Question 2
 
-```python ./Scripts/q2/q2.py```
+## Required Packages
+```bash
+pip install numpy matplotlib networkx
+```
 
-Input:
+## How to Run
+```bash
+python q2.py
+```
 
-Influenza dataset: nyc_influenza_by_county.csv
-County adjacency list file: ./Data/county_adjacency2025.txt
-
-Output:
-
-Figures/top5_influenzaA.png
-and
-Command line outputs.
+## Expected Output
+- PNG files saved in `Figures/` directory
+- Terminal output with results
