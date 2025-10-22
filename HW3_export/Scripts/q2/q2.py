@@ -26,7 +26,7 @@ plt.xlabel('Week Ending Date')
 plt.ylabel('Weekly Count')
 plt.legend()
 plt.tight_layout()
-plt.savefig("/Scripts/q2/Figures/top5_influenzaA.png")
+#plt.savefig("/Scripts/q2/Figures/top5_influenzaA.png")
 plt.show()
 
 ############## 2.2
@@ -56,11 +56,11 @@ def is_anomaly(row):
 test_data['is_anomaly'] = test_data.apply(is_anomaly, axis=1)
 anomaly_counts = test_data.groupby('County')['is_anomaly'].sum()
 sorted_anomaly_counts = anomaly_counts.sort_values(ascending=False)
-sorted_anomaly_counts = sorted_anomaly_counts.sort_values(ascending=False).sort_index()
+sorted_anomaly_counts = sorted_anomaly_counts.sort_index().sort_values(ascending=False, kind='mergesort')
 top_10 = sorted_anomaly_counts.head(10)
 top10out = " ".join([f"{county}: {int(top_10[county])}" for county in top_10.index])
 print()
-print("2.3 Top 10 counties with most anomalies from 2017 and on:")
+print("2.3 Top 10 counties with most anomalies (over or under) from 2017 and on:")
 print(top10out)
 
 ############## 2.4  Spatial Subset Scan (with neighbor-averaged counts)
